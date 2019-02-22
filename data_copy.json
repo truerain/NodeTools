@@ -1,0 +1,47 @@
+{
+    "version": "1.0.0",
+    "description": "",
+    "database": {
+        "source": {
+            "host": "localhost",
+            "user": "webuser",
+            "password": "12345",
+            "database": "my_testing"
+        },
+        "target": {
+            "host": "192.168.55.102",
+            "user": "webuser",
+            "password": "12345",
+            "database": "playground"
+        }
+    },
+    "tb_product": {
+        "fetch_size": 100,
+        "source": {
+            "table": "tb_product",
+            "query": [
+                "SELECT jav_key, prod_code, title, running_time, maker, label, series, director, genre, actress, pub_date, image_url,creation_date  ",
+                "FROM tb_product ",
+                "ORDER BY jav_key "
+            ]
+        },
+        "target": {
+            "table": "tb_product",
+            "fields": [
+                "jav_key",
+                "prod_code",
+                "title",
+                "running_time",
+                "maker",
+                "label",
+                "series",
+                "director",
+                "genre",
+                "actress",
+                "pub_date",
+                "image_url",
+                "creation_date"
+            ]
+        }
+    }
+}
